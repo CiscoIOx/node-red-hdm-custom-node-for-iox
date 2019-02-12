@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Hdm custom IOx connector',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            shcmd: {type: "text"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"Hdm custom IOx connector";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Hdm custom IOx connector">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-shcmd"><i class="fa fa-bookmark"></i> IOS Show Command</label>
+        <input type="text" id="node-input-shcmd" placeholder="Show Command">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Hdm custom IOx connector">
+    <p>A simple node that gets hdm data</p>
+</script>

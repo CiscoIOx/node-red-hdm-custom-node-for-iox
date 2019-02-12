@@ -1,0 +1,16 @@
+{
+  "name": "node-red-iox-hdm-custom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hdm_custom.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "node-red": {
+    "nodes": {
+      "Hdm custom IOx connector": "hdm_custom.js"
+    }
+  },
+  "author": "",
+  "license": "ISC"
+}
