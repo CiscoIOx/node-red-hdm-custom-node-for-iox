@@ -19,28 +19,28 @@ This repo contains code for Cisco IOx HDM custom node module of Node-RED. HDM st
 (If you already have Docker image `node0:1.0`, you can skip this step.)
 
 Build Docker image `node0:1.0` using the following package:
-https://github3.cisco.com/leyhu/node-red-slim-for-iox
+https://github.com/CiscoIOx/node-red-slim-for-iox
 
 **0.2 Build gps node Docker image**
 
 (If you already have Docker image `gpsnode:1.0`, you can skip this step.)
 
 Build Docker image `gpsnode:1.0` using the following package:
-https://github3.cisco.com/leyhu/node-red-gps-node-for-iox
+https://github.com/CiscoIOx/node-red-gps-node-for-iox
 
 **0.3 Build motion node Docker image**
 
 (If you already have Docker image `motionnode:1.0`, you can skip this step.)
 
 Build Docker image `motionnode:1.0` using the following package:
-https://github3.cisco.com/leyhu/node-red-motion-node-for-iox
+https://github.com/CiscoIOx/node-red-motion-node-for-iox
 
 **0.4 Build HDM node Docker image**
 
 (If you already have Docker image `hdmnode:1.0`, you can skip this step.)
 
 Build Docker image `hdmnode:1.0` using the following package:
-https://github3.cisco.com/leyhu/node-red-hdm-node-for-iox
+https://github.com/CiscoIOx/node-red-hdm-node-for-iox
 
 **1. Build HDM custom node Docker image**
 
@@ -68,9 +68,9 @@ Access device Local Manager UI using the URL path **https://:8443**.
 
 Deploy the app using the name `nodered` and the package `package.tar` that you created.
 
-![image](https://github3.cisco.com/storage/user/6479/files/825b5ae6-f245-11e8-94d2-45da3da354e8)
+![image](https://user-images.githubusercontent.com/47573639/52669802-ec58eb80-2ecb-11e9-98ac-655385899b88.png)
 
-![image](https://github3.cisco.com/storage/user/6479/files/8b7cbdb8-f245-11e8-9e56-b106cbd22965)
+![image](https://user-images.githubusercontent.com/47573639/52669839-0692c980-2ecc-11e9-8e75-940cd17bec35.png)
 
 Activate the app with these configurations:
 - Choose `iox-nat0` for network and `1880:1880` for custom port mapping.
@@ -82,15 +82,15 @@ Activate the app with these configurations:
 
   You can change the combination upon the consumption of your other apps. The memory should be no less.
 
-![image](https://github3.cisco.com/storage/user/6479/files/93de2014-f245-11e8-9307-364e6355722b)
+![image](https://user-images.githubusercontent.com/47573639/52669886-21653e00-2ecc-11e9-9a46-a0d7893ebd6c.png)
 
-![image](https://github3.cisco.com/storage/user/6479/files/a0e3482a-f245-11e8-91a2-d80ce111dff2)
+![image](https://user-images.githubusercontent.com/47573639/52669905-33df7780-2ecc-11e9-9e87-2034a9c277c3.png)
 
-![image](https://github3.cisco.com/storage/user/6479/files/aa38a078-f245-11e8-84f3-d86a0b2c64f1)
+![image](https://user-images.githubusercontent.com/47573639/52669953-478ade00-2ecc-11e9-8b28-372632210bfc.png)
 
 Finally start the app.
 
-![image](https://github3.cisco.com/storage/user/6479/files/b9ab5104-f245-11e8-93c0-460286a01b2c)
+![image](https://user-images.githubusercontent.com/47573639/52670022-730dc880-2ecc-11e9-9e7d-596e5a8aed68.png)
 
 **For ioxclient option:**
 
@@ -108,33 +108,33 @@ The `activation.json` file is similar to the Sample Activation payload in [GPS s
 
 Open Node-RED interface at **http://:1880**.
 
-![image](https://github3.cisco.com/storage/user/6479/files/5c77fb08-f246-11e8-92ca-d6ac1b69afc0)
+![image](https://user-images.githubusercontent.com/47573639/52670134-ad776580-2ecc-11e9-8cdc-ee5e62316ee2.png)
 
 Build a simple flow with `inject`, `Hdm custom IOx connector` and `debug` nodes. Use `timestamp` as the payload of `inject` node.
 
-![image](https://github3.cisco.com/storage/user/6479/files/972a6a0e-0210-11e9-8257-9a577efc22e9)
+![image](https://user-images.githubusercontent.com/47573639/52672273-3a70ed80-2ed2-11e9-949d-a8b97e2ad7b4.png)
 
 Set `Repeat` to `none`.
 
-![image](https://github3.cisco.com/storage/user/6479/files/089b7c00-0211-11e9-9877-54dc552a6b05)
+![image](https://user-images.githubusercontent.com/47573639/52672290-4b216380-2ed2-11e9-8b95-ffc8313a6092.png)
 
 Double click the `hdm_custom` node and type in a show command (any command built for IOS console) and deploy.
 
-![image](https://github3.cisco.com/storage/user/6479/files/3eaec18a-0211-11e9-81c3-aa1455cc95aa)
+![image](https://user-images.githubusercontent.com/47573639/52672324-64c2ab00-2ed2-11e9-9e2a-2689879673ba.png)
 
-![image](https://github3.cisco.com/storage/user/6479/files/6174ba6c-0211-11e9-8887-4f1835f401f8)
+![image](https://user-images.githubusercontent.com/47573639/52672348-73a95d80-2ed2-11e9-8cbf-50e777c857bc.png)
 
 Click the button at `timestamp` node once. You'll be able to see a result of the show command you assigned.
 
-![image](https://github3.cisco.com/storage/user/6479/files/97c3f632-0211-11e9-9502-62773e952419)
+![image](https://user-images.githubusercontent.com/47573639/52672382-8f146880-2ed2-11e9-9b65-b93aac22334b.png)
 
 If you set `Repeat` to `interval` of `every 20 seconds` and deploy. (Some results of show commands are long and too frequent requests may break the HDM service, so longer intervals are recommended.)
 
-![image](https://github3.cisco.com/storage/user/6479/files/db4bbbba-0211-11e9-9208-7af05da773a1)
+![image](https://user-images.githubusercontent.com/47573639/52672406-9fc4de80-2ed2-11e9-9ef5-01c092805097.png)
 
-![image](https://github3.cisco.com/storage/user/6479/files/fefd60ea-0211-11e9-8eed-23e5211a205c)
+![image](https://user-images.githubusercontent.com/47573639/52672421-ad7a6400-2ed2-11e9-8ac2-ac44384edce7.png)
 
-![image](https://github3.cisco.com/storage/user/6479/files/6708f226-0212-11e9-8b3f-7e4531441536)
+![image](https://user-images.githubusercontent.com/47573639/52672440-b9febc80-2ed2-11e9-9eb5-454f6d937913.png)
 
 Set `Repeat` back to `none` and deploy to stop data streaming.
 
@@ -144,17 +144,17 @@ Enter IOx appconsole by:
 
 `ioxclient app console nodered`
 
-![image](https://github3.cisco.com/storage/user/6479/files/bde61b1e-f24a-11e8-8c4c-cee588295e0e)
+![image](https://user-images.githubusercontent.com/47573639/52670461-6e95df80-2ecd-11e9-89dc-2605bb189b47.png)
 
 Run the following command to push flows file and credentials file to Local Manager.
 
 `sh /usr/src/node-red/hdmcustom/getflows.sh`
 
-![image](https://github3.cisco.com/storage/user/6479/files/b7ad0320-0212-11e9-879f-8af8aec789c3)
+![image](https://user-images.githubusercontent.com/47573639/52672476-d3a00400-2ed2-11e9-8a0a-cb6cb8832e32.png)
 
 Go to Local Manager. Click `Manage` of the nodered app. Click `App-DataDir` tab, you'll see the `flows_$(hostname).json` and `flows_$(hostname)_cred.json` files from there. Download the files to get the flows in Node-RED of this device. The credentials are encrypted.
 
-![image](https://github3.cisco.com/storage/user/6479/files/448b8bea-f24b-11e8-9f94-c9c5b9d7f08a)
+![image](https://user-images.githubusercontent.com/47573639/52670527-a6048c00-2ecd-11e9-8654-7d1b47515fb9.png)
 
 **6. Use the flows on other devices**
 
@@ -162,17 +162,17 @@ Go to the Local Manager of a different device. Or you can use Fog Director for m
 
 Upload `flows_$(hostname).json` and `flows_$(hostname)_cred.json` under `App-DataDir` tab. These two files should both be uploaded or not. They work in a pair. Use path `flows.json` and `flowscred.json` respectively to ensure that they will work on different types of devices.
 
-![image](https://github3.cisco.com/storage/user/6479/files/44740550-f24c-11e8-9915-b7bdca4dc042)
+![image](https://user-images.githubusercontent.com/47573639/52670554-b61c6b80-2ecd-11e9-82f0-b95756111426.png)
 
-![image](https://github3.cisco.com/storage/user/6479/files/7929e436-f24c-11e8-9a19-ecbac5963a59)
+![image](https://user-images.githubusercontent.com/47573639/52670584-c9c7d200-2ecd-11e9-9248-f7975a79d684.png)
 
 Start the nodered app of this second device. You should be able to see the flows with credentials already set up.
 
-![image](https://github3.cisco.com/storage/user/6479/files/af21ddb4-f24c-11e8-8f0d-a54f291dc34f)
+![image](https://user-images.githubusercontent.com/47573639/52670612-dc420b80-2ecd-11e9-91ba-a8438398db41.png)
 
 Example flows are shown below.
 
-![image](https://github3.cisco.com/storage/user/6479/files/9bdd4cec-0201-11e9-8cff-cc04b5313108)
+![image](https://user-images.githubusercontent.com/47573639/52672088-9b4bf600-2ed1-11e9-8ce6-802a29665c9b.png)
 
 **7. Set up your own credentialSecret**
 
@@ -185,7 +185,7 @@ By default, the `credentialSecret` in `settings.js` of the nodered app is set to
 }
 ```
 
-![image](https://github3.cisco.com/storage/user/6479/files/1b737472-f24e-11e8-8033-6c15efb1e9dd)
+![image](https://user-images.githubusercontent.com/47573639/52670692-0abfe680-2ece-11e9-8edc-9123ede79bbd.png)
 
 Make sure you have this `cred.json` file with the same `credentialSecret` for all your devices so that the `flows_$(hostname)_cred.json` file can be decrypted correctly.
 
